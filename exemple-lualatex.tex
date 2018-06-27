@@ -1,0 +1,115 @@
+% on peut choisir entre aspectratio 43 et 169
+\documentclass[10pt,aspectratio=169]{beamer}
+\usepackage{beamer-univ-lille}
+
+\usepackage{fontspec}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% la police d'après la charte graphique
+\setmainfont{Verdana}
+
+
+% petite macro pour afficher la table des matières; n'a rien à voir avec le style
+\newcommand{\TOC}{\begin{frame}{Plan}
+\tableofcontents
+\end{frame}}
+\newcommand{\TOCcs}{
+\begin{frame}{Plan}
+\tableofcontents[currentsection]
+\end{frame}}
+
+% -----------------------------------------------------
+\author[Collectif]{Première Version:\\Iovka Boneva,\\Toute Contribution\\Est Bienvenue}
+%\date{2017--2018}
+\title[Beamer Univ Lille]{Style Beamer aux couleurs de Université de Lille}
+% --------------------------------------------------------------------
+
+
+
+\begin{document}
+
+% Page de titre
+{
+\titlepagestyle
+\begin{frame}
+  \begin{columns}[c]
+    \column{0.3\textwidth}
+    \column{0.7\textwidth} \maketitle    
+  \end{columns}
+\end{frame}
+}
+
+\section{Introduction}
+\TOC
+\TOCcs
+
+\begin{frame}{Que propose ce style ?}
+  \begin{itemize}
+  \item définition des couleurs de la palette Univ Lille d'après \\
+    \url{https://identite.intranet.univ-lille.fr/règles-dutilisation/couleurs}
+  \item définition des couleurs pour  quelques éléments standard de Beamer
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Ce que ce style n'est pas}
+  Ce style \alert{n'est pas un gabarit officiel} fourni par l'Université de Lille.
+
+  \bigskip
+  Il est fait par des personnels de l'université, donné tel quel à être utilisé par ceux qui le jugeraient utile
+\end{frame}
+
+
+
+\section{Aperçu des éléments du style}
+\TOCcs
+
+\begin{frame}{Éléments beamer}
+  Ces couleurs sont utilisées par défaut, n'hésitez pas à faire votre propre cuisine dans le fichier de style !
+  \begin{block}{Les blocks}
+    Le titre d'un block utilise une des couleurs de la palette, modifiable dans le fichier de style.
+  \end{block}
+  \begin{exampleblock}{Les exemples}
+    Le titre des blocks d'exemple utilise une des couleurs de la palette
+  \end{exampleblock}
+  \begin{alertblock}{Block en alerte}
+    Texte sur lequel on veut attirer l'attention
+  \end{alertblock}
+  Texte \alert{en alerte}.
+\end{frame}
+
+\begin{frame}{Comment l'utiliser}
+  \begin{itemize}
+  \item importer les définitions avec \texttt{\textbackslash{}usepackage\{beamer-univ-lille\}} %\texttt{\bs{}usepackage{latex-cours-univ-lille}}
+  \item utiliser ce fichier d'exemple comme trame.
+  \item ne pas oublier \texttt{\textbackslash{}setmainfont\{Verdana\}} dans le préambule pour utiliser la police recommandée par la charte graphique de l'université. Peut-être il vous faudra installer la police
+  \end{itemize}
+\end{frame}
+
+\section{Comment contribuer}
+\TOCcs
+
+\begin{frame}{Toute contribution est bienvenue}
+  Si quelqu'un se sent l'envie de rendre cette première ébauche moins artisanale:
+  \begin{itemize}
+  \item Ce serait bien d'avoir un \alert{thème couleur} fait dans les règles de l'art, à utiliser avec \texttt{\textbackslash{}usecolortheme\{univLille\}}
+  \item Si vous améliorez le style, partagez votre contribution !
+  \item Pour cela, faire un pull request sur github, ou envoyer un mail à \texttt{iovka.boneva@univ-lille.fr}
+  \item N'oubliez pas de changer ce fichier d'exemple pour qu'il reflète votre contribution
+  \end{itemize}
+\end{frame}
+
+
+% Dernière page
+{
+  \titlepagestyle
+  \begin{frame}{}
+    \begin{center}
+      Enjoy !
+    \end{center}
+  \end{frame}
+}
+
+
+\end{document}

@@ -1,0 +1,75 @@
+% Définitions de couleurs (d'après charte graphique univ)
+% Les différentes palettes n(eutre), f(roide), c(haude), v(ives) sont celles définies sur
+% https://identite.intranet.univ-lille.fr/r%C3%A8gles-dutilisation/couleurs
+
+% Palette standard : pourpre et noir
+\definecolor{univ@pourpre}{RGB}{174,37,115}
+\definecolor{univ@noir}{RGB}{0,0,0}
+
+% Palette couleurs neutres
+\definecolor{univ@ngris}{RGB}{56,47,45}
+\definecolor{univ@nbleu}{RGB}{122,160,172}
+\definecolor{univ@nrose}{RGB}{216,200,209}
+
+% Palette couleurs froides
+\definecolor{univ@fbleufonce}{RGB}{29,66,138}
+\definecolor{univ@fvert}{RGB}{0,179,152}
+\definecolor{univ@fbleuclair}{RGB}{141,200,232}
+
+% Palette couleurs chaudes
+\definecolor{univ@cpourpre}{RGB}{114,0,98}
+\definecolor{univ@cocre}{RGB}{211,130,53}
+\definecolor{univ@cecru}{RGB}{213,203,159}
+
+% Palette couleurs vives
+\definecolor{univ@vrouge}{RGB}{249,66,58}
+\definecolor{univ@vvert}{RGB}{120,190,32}
+\definecolor{univ@vjaune}{RGB}{252,227,0}
+
+\useinnertheme{circles}
+
+% Ici on peut personnaliser en utilisant les palettes
+% Définition des couleurs de texte et des différents éléments de beamer utilisés
+\setbeamercolor{normal text}{fg=univ@ngris}
+\setbeamercolor{structure}{fg=univ@ngris}
+\setbeamercolor{alerted text}{fg=univ@cocre}
+\setbeamercolor{titlelike}{fg=univ@pourpre}
+\setbeamercolor{description item}{fg=univ@cpourpre}
+
+\setbeamercolor*{block title}{fg=univ@pourpre}
+\setbeamercolor*{block body}{fg=univ@ngris}
+
+\setbeamercolor*{block title example}{fg=univ@nbleu}
+\setbeamercolor*{block body example}{fg=univ@ngris}
+
+\setbeamercolor*{block title alerted}{fg=univ@fvert}
+\setbeamercolor*{block body alerted}{fg=univ@fbleufonce}
+
+% Pour la page de titre
+\setbeamerfont{title}{parent=normal text}%shape=\scshape fait perdre la police par défaut 
+
+% Définition du style de la première page, les pages normales, et la dernière page
+\ifdim\beamer@paperwidth=16.00cm
+\newcommand{\normalpagebg}{style/latex-page169.png}
+\newcommand{\lastpagebg}{style/latex-derniere169.png}
+\else
+\newcommand{\normalpagebg}{style/latex-page.png}
+\newcommand{\lastpagebg}{style/latex-derniere.png}
+\fi
+
+
+% Page normale, valeur par défaut
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{\normalpagebg}}
+
+% Page de titre et dernière page, à positionner uniquement pour les pages concernées
+\newcommand{\titlepagestyle}{%
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{\lastpagebg}}
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor*{title}{fg=white}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{institute}{fg=white}
+\setbeamercolor*{date}{fg=white}
+\setbeamercolor{footnote}{fg=white}
+}
+
+\beamertemplatenavigationsymbolsempty
